@@ -6,6 +6,10 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitf167a1708191924b76bb1f173b4c4a2d
 {
+    public static $files = array (
+        '34901568a1e26d13dd475cb2c85e0284' => __DIR__ . '/..' . '/zendframework/zend-form/autoload/formElementManagerPolyfill.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'Z' => 
         array (
@@ -13,19 +17,29 @@ class ComposerStaticInitf167a1708191924b76bb1f173b4c4a2d
             'Zend\\Validator\\' => 15,
             'Zend\\Uri\\' => 9,
             'Zend\\Stdlib\\' => 12,
-            'Zend\\SkeletonInstaller\\' => 23,
             'Zend\\ServiceManager\\' => 20,
             'Zend\\Router\\' => 12,
+            'Zend\\Mvc\\I18n\\' => 14,
             'Zend\\Mvc\\' => 9,
             'Zend\\ModuleManager\\' => 19,
             'Zend\\Loader\\' => 12,
             'Zend\\Json\\' => 10,
+            'Zend\\InputFilter\\' => 17,
+            'Zend\\I18n\\' => 10,
+            'Zend\\Hydrator\\' => 14,
             'Zend\\Http\\' => 10,
+            'Zend\\Form\\' => 10,
+            'Zend\\Filter\\' => 12,
             'Zend\\EventManager\\' => 18,
             'Zend\\Escaper\\' => 13,
             'Zend\\Config\\' => 12,
             'Zend\\ComponentInstaller\\' => 24,
             'ZF\\DevelopmentMode\\' => 19,
+        ),
+        'Y' => 
+        array (
+            'Youtube\\' => 8,
+            'YoutubeTest\\' => 12,
         ),
         'P' => 
         array (
@@ -34,11 +48,6 @@ class ComposerStaticInitf167a1708191924b76bb1f173b4c4a2d
         'I' => 
         array (
             'Interop\\Container\\' => 18,
-        ),
-        'A' => 
-        array (
-            'Application\\' => 12,
-            'ApplicationTest\\' => 16,
         ),
     );
 
@@ -59,10 +68,6 @@ class ComposerStaticInitf167a1708191924b76bb1f173b4c4a2d
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-stdlib/src',
         ),
-        'Zend\\SkeletonInstaller\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/zendframework/zend-skeleton-installer/src',
-        ),
         'Zend\\ServiceManager\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-servicemanager/src',
@@ -70,6 +75,10 @@ class ComposerStaticInitf167a1708191924b76bb1f173b4c4a2d
         'Zend\\Router\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-router/src',
+        ),
+        'Zend\\Mvc\\I18n\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-mvc-i18n/src',
         ),
         'Zend\\Mvc\\' => 
         array (
@@ -87,9 +96,29 @@ class ComposerStaticInitf167a1708191924b76bb1f173b4c4a2d
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-json/src',
         ),
+        'Zend\\InputFilter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-inputfilter/src',
+        ),
+        'Zend\\I18n\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-i18n/src',
+        ),
+        'Zend\\Hydrator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-hydrator/src',
+        ),
         'Zend\\Http\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-http/src',
+        ),
+        'Zend\\Form\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-form/src',
+        ),
+        'Zend\\Filter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-filter/src',
         ),
         'Zend\\EventManager\\' => 
         array (
@@ -111,6 +140,14 @@ class ComposerStaticInitf167a1708191924b76bb1f173b4c4a2d
         array (
             0 => __DIR__ . '/..' . '/zfcampus/zf-development-mode/src',
         ),
+        'Youtube\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/module/Youtube/src',
+        ),
+        'YoutubeTest\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/module/Youtube/test',
+        ),
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
@@ -118,14 +155,6 @@ class ComposerStaticInitf167a1708191924b76bb1f173b4c4a2d
         'Interop\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
-        ),
-        'Application\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/module/Application/src',
-        ),
-        'ApplicationTest\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/module/Application/test',
         ),
     );
 
