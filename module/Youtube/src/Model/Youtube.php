@@ -2,14 +2,22 @@
 
 namespace Youtube\Model;
 
+use DomainException;
+use Zend\Filter\StringTrim;
+use Zend\Filter\StripTags;
+use Zend\Filter\ToInt;
+use Zend\InputFilter\InputFilter;
+use Zend\InputFilter\InputFilterAwareInterface;
+use Zend\InputFilter\InputFilterInterface;
+use Zend\Validator\StringLength;
+
 class Youtube
 {
-    // public $id;
-    // public $title;
+    public $keywords;
 
-    // public function exchangeArray(array $data)
-    // {
-    //     $this->id     = !empty($data['id']) ? $data['id'] : null;
-    //     $this->title  = !empty($data['title']) ? $data['title'] : null;
-    // }
+    public function exchangeArray(array $data)
+    {
+        $this->keywords     = !empty($data['keywords']) ? $data['keywords'] : null;
+    }
+
 }

@@ -14,26 +14,16 @@ use Zend\ServiceManager\Factory\InvokableFactory;
 return [
     'router' => [
         'routes' => [
-            'home' => [
-                'type'    => Literal::class,
-                'options' => [
-                    'route'    => '/',
-                    'defaults' => [
-                        'controller' => Controller\IndexController::class,
-                        'action'     => 'index',
-                    ],
-                ],
-            ],
             'youtube' => [
                 'type'    => Segment::class,
                 'options' => [
                     'route'    => '[/:keywords]',
                     'constraints' => [
-                        'keywords' => '[a-zA-Z][a-zA-Z0-9_-]*'
+                        'keywords' => '[\s\S]*'
                     ],
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
-                        'action'     => 'search',
+                        'action'     => 'index',
                     ],
                 ],
             ],
@@ -53,7 +43,7 @@ return [
         'template_map' => [
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
             'youtube/index'           => __DIR__ . '/../view/youtube/index/index.phtml',
-            'youtube/search'          => __DIR__ . '/../view/youtube/index/search.phtml',
+            // 'youtube/search'          => __DIR__ . '/../view/youtube/index/search.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ],

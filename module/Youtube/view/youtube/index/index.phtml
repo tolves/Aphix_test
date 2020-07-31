@@ -5,4 +5,200 @@ $this->headTitle($title);
 ?>
 <h1><?= $this->escapeHtml($title) ?></h1>
 
-<?= $test ?>
+<hr>
+<div id="error">
+    <?php if (!empty($error)){?>
+    <p>error_code: <?= $error['error_code'] ?></p>
+    <p>error_phrase: <?= $error['error_phrase'] ?></p>
+    <?php }?>
+</div>
+<div>
+<div>
+        <form>
+            <span>
+                part: <input type="text" id='part' value="snippet">
+                maxResults: <input type="text" id='maxResults' value="25">
+                <p>q: <input type="text" id='q' value=""></p>
+            </span>
+            <!-- <p>channelId: <input type="text" id='channelId' value=""></p>
+                        <p>channelType: <select id='channelType'>
+                                <option value="any">any</option>
+                                <option value="show">show</option>
+                            </select>
+                        </p>
+                        <p>eventType: <select id='eventType'>
+                                <option value="none">none</option>
+                                <option value="completed">completed</option>
+                                <option value="live">live</option>
+                                <option value="upcoming">upcoming</option>
+                            </select>
+                        </p>
+                        <p>location: <input type="text" id='location' value=""></p>
+                        <p>locationRadius: <input type="text" id='locationRadius' value=""></p> -->
+            <p></p>
+            <!-- <p>onBehalfOfContentOwner: <input type="text" id='onBehalfOfContentOwner' value=""></p>
+                        <p>order: <select id='order'>
+                                <option value="relevance">relevance</option>
+                                <option value="date">date</option>
+                                <option value="rating">rating</option>
+                                <option value="title">title</option>
+                                <option value="videoCount">videoCount</option>
+                                <option value="viewCount">viewCount</option>
+                            </select>
+                        </p>
+                        <p>pageToken: <input type="text" id='channelId' value=""></p> -->
+
+            <!-- <p>regionCode: <input type="text" id='regionCode' value=""></p>
+                        <p>relevanceLanguage: <input type="text" id='relevanceLanguage' value=""></p>
+                        <p>safeSearch: <select id='safeSearch'>
+                                <option value="moderate">moderate</option>
+                                <option value="none">none</option>
+                                <option value="strict">strict</option>
+                            </select></p>
+                        <p>topicId: <input type="text" id='topicId' value=""></p>
+                        <p>type: <select id='type'>
+                                <option value="channel">channel</option>
+                                <option value="playlist">playlist</option>
+                                <option value="video">video</option>
+                            </select></p>
+                        <p>videoCaption: <select id='videoCaption'>
+                                <option value="any">any</option>
+                                <option value="closedCaption">closedCaption</option>
+                                <option value="none">none</option>
+                            </select></p>
+                        <p>videoCategoryId: <input type="text" id='videoCategoryId' value=""></p>
+                        <p>videoDefinition: <select id='videoDefinition'>
+                                <option value="any">any</option>
+                                <option value="high">high</option>
+                                <option value="standard">standard</option>
+                            </select></p>
+                        <p>videoDimension: <select id='videoDimension'>
+                                <option value="any">any</option>
+                                <option value="2d">2d</option>
+                                <option value="3d">3d</option>
+                            </select></p>
+                        <p>videoDuration: <select id='videoDuration'>
+                                <option value="any">any</option>
+                                <option value="long">long </option>
+                                <option value="medium">medium </option>
+                                <option value="short">short</option>
+                            </select></p>
+                        <p>videoEmbeddable: <select id='videoEmbeddable'>
+                                <option value="any">any</option>
+                                <option value="true">true </option>
+                            </select></p>
+                        <p>videoLicense: <select id='videoLicense'>
+                                <option value="any">any</option>
+                                <option value="creativeCommon">creativeCommon</option>
+                                <option value="youtube">youtube</option>
+                            </select></p>
+                        <p>videoSyndicated: <select id='videoSyndicated'>
+                                <option value="any">any</option>
+                                <option value="true">true</option>
+                            </select></p>
+                        <p>videoType: <select id='videoType'>
+                                <option value="any">any</option>
+                                <option value="episode">episode</option>
+                                <option value="movie">movie</option>
+                            </select></p> -->
+            <input type='button' id='search' value='search'>
+        </form>
+        <form>
+    </div>
+    <div>
+        <table id='results'>
+            <tr>
+                <th>
+                    etag
+                </th>
+                <th>
+                    kind
+                </th>
+                <th>
+                    videoId
+                </th>
+            </tr>
+            <?php if ( !empty($results)) {
+                            foreach ($results['items'] as $r) : ?>
+            <tr>
+                <td><?= $r['etag'] ?></td>
+                <td><?= $r['id']['kind'] ?></td>
+                <td><?= ($r['id']['videoId'] == null ? $r['id']['playlistId'] : $r['id']['videoId']) ?></td>
+            </tr>
+            <?php endforeach; } ; ?>
+
+        </table>
+    </div>
+    <hr>
+    
+</div>
+
+<script>
+
+$('#search').click(function() {
+    var data = {
+        part: $('#part').val(),
+        // channelId: $('#channelId').val(),
+        // eventType: $('#eventType').val(),
+        // location: $('#location').val(),
+        // locationRadius: $('#locationRadius').val(),
+        maxResults: $('#maxResults').val(),
+        // onBehalfOfContentOwner: $('#onBehalfOfContentOwner').val(),
+        // order: $('#order').val(),
+        q: $('#q').val(),
+        // regionCode: $('#regionCode').val(),
+        // relevanceLanguage: $('#relevanceLanguage').val(),
+        // safeSearch: $('#safeSearch').val(),
+        // topicId: $('#topicId').val(),
+        // type: $('#type').val(),
+        // videoCaption: $('#videoCaption').val(),
+        // videoCategoryId: $('#videoCategoryId').val(),
+        // videoDefinition: $('#videoDefinition').val(),
+        // videoDimension: $('#videoDimension').val(),
+        // videoDuration: $('#videoDuration').val(),
+        // videoEmbeddable: $('#videoEmbeddable').val(),
+        // videoLicense: $('#videoLicense').val(),
+        // videoSyndicated: $('#videoSyndicated').val(),
+        // videoType: $('#videoType').val(),
+    }
+
+    $.ajax({
+        type: 'GET',
+        dataType: 'json',
+        url: 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyDz37KtWHsETecshmI5rOk1SCm1ImQy2Tk',
+        async: false,
+
+        // you can use an object here
+        data: data,
+        success: function(youtube_list) {
+            console.log(youtube_list.items);
+            $("#results").html();
+            $.each(youtube_list.items, function(index, value) {
+                var id = '';
+                switch (value.id.kind) {
+                    case "youtube#video":
+                        id = value.id.videoId;
+                        break;
+                    case "youtube#playlist":
+                        id = value.id.playlistId;
+                        break;
+                    case "youtube#channel":
+                        id = value.id.channelId;
+                        break;
+                    default:
+                        id = '';
+                }
+                $("#results").append("<tr><td>" + value.etag + "</td><td>" + value.id.kind +
+                    "</td><td>" + id + "</td></tr>")
+            });
+        },
+        error: function(xhr, status, error) {
+            var err = JSON.parse(xhr.responseText);
+            console.log(err.error);
+            $("#error").html("<p>error_code: " + err.error.code + "</p>");
+            $("#error").append("<p>error_message: " + err.error.message + "</p>");
+        }
+    });
+    return false;
+});
+</script>
